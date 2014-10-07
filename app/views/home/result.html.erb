@@ -3,6 +3,12 @@
 <strong>Your created:</strong> <%= @data_url.created_on %><br><br>
 <strong>Your expires:</strong> <%= @data_url.expires_on %><br><br>
 <strong>Your registrant_contact:</strong> <%= @data_url.registrant_contacts %><br><br>
+<% if @data_url.to_s.include?(@administrative) %>
+<strong>Your Administrative Contacts:</strong> <%= @data_url.admin_contacts%><br><br>
+<% end %>
+<% if @data_url.to_s.include?(@technical) %>
+    <strong>Your Technical Contacts::</strong> <%= @data_url.technical_contacts%><br><br>
+<% end %>
 <% if @data_url %>
 <strong>Your registrant_email:</strong> <%= @data_url.match(@reg_email) %><br><br>
 <% end %>
