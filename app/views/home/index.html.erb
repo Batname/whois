@@ -1,0 +1,17 @@
+<h1>Home#index</h1>
+<p>Find me in app/views/home/index.html.erb</p>
+
+<%
+   require 'rubygems'
+   require 'whois'
+   my_array = ['511tactical.com', 'turnkeye.com', 'pinupgirlclothing.com', 'liveboard.tv', 'goldenedibles.com', 'sitemaster.com.ua']
+%>
+<% my_array.each do |x| %>
+    <% r = Whois.whois("#{x}") %>
+    <%= x %> <br>
+    <%= r.created_on %><br>
+    <%= r.expires_on %><br>
+    <%= r.registrant_contacts %><br>
+    <br>
+<% end %>
+
