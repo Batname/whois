@@ -14,4 +14,8 @@
     <%= r.registrant_contacts %><br>
     <br>
 <% end %>
-
+<hr>
+<% r = Whois.whois("babyhaven.com") %>
+ <h2>babyhaven.com</h2><br>
+<% reg_email = /\b([a-zA-Z0-9._%+-]+)@([a-zA-Z0-9.-]+?)(\.[a-zA-Z.]*)\b/  %>
+<%= r.match(reg_email) %>
