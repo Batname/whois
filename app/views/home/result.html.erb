@@ -1,0 +1,14 @@
+<%= link_to 'New search', :back %><br><br>
+<strong>Your domian:</strong> <%= @url %><br><br>
+<strong>Your created:</strong> <%= @data_url.created_on %><br><br>
+<strong>Your expires:</strong> <%= @data_url.expires_on %><br><br>
+<strong>Your registrant_contact:</strong> <%= @data_url.registrant_contacts %><br><br>
+<% if @data_url %>
+<strong>Your registrant_email:</strong> <%= @data_url.match(@reg_email) %><br><br>
+<% end %>
+<br>
+<hr>
+<br>
+<pre>
+<strong>Your full info:</strong> <%= @data_url.to_s.gsub(/\bsometsing\b/, 'to ather') %>
+</pre>
